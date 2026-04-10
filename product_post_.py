@@ -28,7 +28,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 # CONFIG
 # =========================
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8379607939:AAEXgHunA820-9b1cQxzUstc-e3FCVeKpZw")
-CHANNEL_ID = os.getenv("CHANNEL_ID", "@testbostsr")
+CHANNEL_ID = os.getenv("CHANNEL_ID", "@aksedstore")
 OWNER_USERNAME = os.getenv("OWNER_USERNAME", "nolyktg")  # without @
 DEFAULT_PRODUCT_PHOTO_URL = os.getenv(
     "DEFAULT_PRODUCT_PHOTO_URL",
@@ -100,7 +100,7 @@ def safe_text(text: str) -> str:
 def build_post_text(data: DraftPost) -> str:
     return (
         f"<b><i>{safe_text(data.title)}</i></b>n\n"
-        f"━━━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━━━━\n"
         f"{PRICE_EMOJI} <b>Цена:</b> {safe_text(data.price)}\n"
         f"{DELIVERY_EMOJI} <b>Доставка:</b> {safe_text(data.delivery)}\n"
         f"{SIZE_EMOJI} <b>Размеры:</b> {safe_text(data.sizes)}\n"
@@ -296,9 +296,9 @@ async def start_handler(message: Message, state: FSMContext):
     if not is_admin(message.from_user.id):
         await message.answer(
             "Привет! 👋\n\n"
-            "Бот     предназначен для создания и управления товарными постами в канале.\n"
+            "Бот предназначен для создания и управления товарными постами в канале.\n"
             f"Подпишись на наш канал: {CHANNEL_ID}\n\n"
-            "Если у вас есть вопросы, свяжитесь с администратором."
+            "Если у вас есть вопросы, свяжитесь с администратором. @nolyktg"
         )
         return
 
